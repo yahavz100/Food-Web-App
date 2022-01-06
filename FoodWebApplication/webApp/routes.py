@@ -274,9 +274,9 @@ def recipe():
         # Cache current recipe
         session["nutrientsList"] = nutrientsList
         session["keywordsList"] = keywordsList
-        recipeList: list = recipe.copy()
-        recipeList[2] = str(recipeList[2])
-        recipeList[3] = str(recipeList[3])
+        # recipeList: list = recipe.copy()
+        # recipeList[2] = str(recipeList[2])
+        # recipeList[3] = str(recipeList[3])
         # session["recipe"] = recipe
         session["ingredientsList"] = ingredientsList
 

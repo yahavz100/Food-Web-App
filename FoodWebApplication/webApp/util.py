@@ -15,7 +15,7 @@ class PageResult:
         return "/displayitems/{}".format(self.page + 1)  # view the next page
 
 
-def generateRandomNumber(lowBound: int, highBound: int):
+def generateRandomNumber(lowBound: int, highBound: int):    # todo make recipes-table as %s
     from webApp.routes import sqlDB
     while True:
         randNumber = random.randint(lowBound, highBound)
