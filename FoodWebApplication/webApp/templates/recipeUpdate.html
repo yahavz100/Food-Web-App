@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Recipe{% endblock %}
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+            <p>{{msg}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<div class="container-fluid">
+    <form action="#" method="post">
+        <p> Name: <input type="text" name="recipeName" value="hey"/></p>
+        <p> Keywords: <input type="text" name="keywords" placeholder="Enter keywords: k1,...,kn"/></p>
+        <p> Description </p>
+        <textarea name="description" rows="4" cols="50" placeholder="Enter description"></textarea>
+        <p> Ingredients: <input type="text" name="ingredients" placeholder="Enter ingredients: i1,...,in"/></p>
+        <p> Amount: <input type="text" name="amount" placeholder="Enter ingredients amount: a1,...,an"/></p>
+        <p> Number of servings: <input type="text" name="servings" placeholder="Enter number of servings"/></p>
+        <p> Instructions </p>
+        <textarea name="instructions" rows="4" cols="50" placeholder="Enter instructions"></textarea>
+        <p> Nutrients </p>
+        <p>
+            Calories: <input type="number" name="calories" placeholder="Enter calories"/>
+            Fat Content: <input type="number" name="fatContent" placeholder="Enter fat"/>
+            Saturated Fat Content: <input type="number" name="saturatedFatContent" placeholder="Enter saturated fat"/>
+            Cholesterol Content: <input type="number" name="cholesterolContent" placeholder="Enter cholesterol"/>
+        </p>
+        <p>
+            Sodium Content: <input type="number" name="sodiumContent" placeholder="Enter sodium"/>
+            Carbohydrate Content: <input type="number" name="carbohydrateContent" placeholder="Enter carbohydrate"/>
+            Fiber Content:<input type="number" name="fiberContent" placeholder="Enter fiber"/>
+        </p>
+        <p>
+            Sugar Content: <input type="number" name="sugarContent" placeholder="Enter sugar"/>
+            Protein Content: <input type="number" name="proteinContent" placeholder="Enter protein"/>
+        </p>
+        <p>
+            Preping Time: <input type="text" name="prepTime" placeholder="Enter prep time: HH:MM:SS"/>
+            Cook Time: <input type="text" name="cookTime" placeholder="Enter cook time: HH:MM:SS"/>
+        </p>
+        <p> <input type="submit" name="update" value="Save"/></p>
+    </form>
+</div>
+
+{% endblock %}
