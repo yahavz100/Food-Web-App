@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Recipe{% endblock %}
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+            <p>{{msg}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<div class="container-fluid">
+    <form action="#" method="post">
+        <p> Name: <input type="text" name="recipeName" value="{{recipeName}}"/></p>
+        <p> Description </p>
+        <textarea name="description" rows="4" cols="50">{{recipeDescription}}</textarea>
+        <p> Number of servings: <input type="text" name="servings" value="{{servings}}"/></p>
+        <p> Instructions </p>
+        <textarea name="instructions" rows="4" cols="50">{{instructions}}</textarea>
+        <p> Nutrients </p>
+        <p>
+            Calories: <input type="number" name="calories" value="{{calories}}"/>
+            Fat Content: <input type="number" name="fatContent" value="{{fatContent}}"/>
+            Saturated Fat Content: <input type="number" name="saturatedFatContent" value="{{saturatedFatContent}}"/>
+            Cholesterol Content: <input type="number" name="cholesterolContent" value="{{cholesterolContent}}"/>
+        </p>
+        <p>
+            Sodium Content: <input type="number" name="sodiumContent" value="{{sodiumContent}}"/>
+            Carbohydrate Content: <input type="number" name="carbohydrateContent" value="{{carbohydrateContent}}"/>
+            Fiber Content:<input type="number" name="fiberContent" value="{{fiberContent}}"/>
+        </p>
+        <p>
+            Sugar Content: <input type="number" name="sugarContent" value="{{sugarContent}}"/>
+            Protein Content: <input type="number" name="proteinContent" value="{{proteinContent}}"/>
+        </p>
+        <p>
+            Preping Time: <input type="text" name="prepTime" value="{{prepTime}}"/>
+            Cook Time: <input type="text" name="cookTime" value="{{cookTime}}"/>
+        </p>
+        <p> <input type="submit" name="update" value="Save"/></p>
+    </form>
+</div>
+
+{% endblock %}
